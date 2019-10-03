@@ -188,7 +188,9 @@
     {
         "#form-validate": {
             "addressValidation": {
+<?php if (method_exists($block, 'getPostCodeConfig')): // Compatibility to 2.2 ?>
                 "postCodes": <?= /* @noEscape */ $block->getPostCodeConfig()->getSerializedPostCodes(); ?>
+<?php endif; ?>
             }
         },
         "#country": {
